@@ -22,6 +22,27 @@ async function fetchMenuItems() {
   updateMenu();
 }
 
+const hamburger = document.getElementById("hamburger-menu");
+const mobileNav = document.getElementById("mobile-nav");
+
+hamburger.addEventListener("click", () => {
+  mobileNav.classList.toggle("active");
+});
+hamburger.addEventListener("keypress", (e) => {
+  if (e.key === "Enter" || e.key === " ") {
+    mobileNav.classList.toggle("active");
+  }
+});
+// Close menu when clicking outside
+document.addEventListener("click", (e) => {
+  if (
+    !mobileNav.contains(e.target) &&
+    !hamburger.contains(e.target) &&
+    mobileNav.classList.contains("active")
+  ) {
+    mobileNav.classList.remove("active");
+  }
+});
 // Menu Rendering
 function updateMenu() {
   const menu = document.getElementById("menu");

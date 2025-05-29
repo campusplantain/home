@@ -21,7 +21,7 @@ header {
   box-shadow: var(--shadow);
   padding: 0 2rem;
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   align-items: center;
   justify-content: center;
   position: sticky;
@@ -32,6 +32,79 @@ header {
   }
 }
 
+/* Hamburger styles */
+.hamburger {
+  width: 32px;
+  height: 32px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  cursor: pointer;
+  gap: 5px;
+  margin-left: auto;
+  margin-right: 1rem;
+  z-index: 1001;
+}
+.hamburger span {
+  display: block;
+  height: 4px;
+  width: 100%;
+  background: var(--primary);
+  border-radius: 2px;
+  transition: 0.3s;
+}
+.mobile-nav {
+  position: fixed;
+  top: 0;
+  right: -260px;
+  width: 220px;
+  height: 100vh;
+  background: var(--card);
+  box-shadow: -2px 0 16px rgba(0, 0, 0, 0.08);
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 2.5rem 1.2rem 1rem 1.2rem;
+  gap: 1.2rem;
+  transition: right 0.3s;
+  z-index: 1000;
+}
+.mobile-nav.active {
+  right: 0;
+}
+.mobile-nav button {
+  width: 100%;
+  margin: 0.2rem 0;
+}
+.mobile-nav .auth-user {
+  margin-bottom: 0.5rem;
+  color: #333;
+  font-weight: bold;
+  font-size: 1rem;
+}
+.cart-btn {
+  margin-left: 1rem;
+  background: var(--primary);
+  color: #fff;
+  border: none;
+  border-radius: var(--radius);
+  padding: 0.5rem 1.2rem;
+  font-size: 1rem;
+  cursor: pointer;
+  font-weight: bold;
+  box-shadow: var(--shadow);
+  transition: transform 0.1s;
+}
+/* @media (min-width: 700px) {
+  .hamburger,
+  .mobile-nav {
+    display: none !important;
+  }
+  nav,
+  .cart-btn {
+    display: inline-block !important;
+  }
+} */
 .logo {
   font-size: 2rem;
   font-weight: 700;

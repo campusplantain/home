@@ -14,13 +14,25 @@
     <header>
       <h1>🍔</h1>
       <h1 class="logo">Campus Plantain</h1>
-      <nav>
+      <div
+        class="hamburger"
+        id="hamburger-menu"
+        tabindex="0"
+        aria-label="Open menu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+      <nav class="mobile-nav" id="mobile-nav">
+        <span class="auth-user" id="auth-user"></span>
         <button id="auth-btn">Sign In</button>
-        <button id="cart-btn">🛒 Cart (<span id="cart-count">0</span>)</button>
         <button id="history-btn">📜 History</button>
       </nav>
-      <span class="auth-user" id="auth-user"></span>
+      <button id="cart-btn" class="cart-btn">
+        🛒 Cart (<span id="cart-count">0</span>)
+      </button>
     </header>
+
     <main>
       <section class="menu" id="menu"></section>
     </main>
